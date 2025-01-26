@@ -40,4 +40,16 @@ document.addEventListener('keydown', (event) => {
   // Update the player's position in the maze
   $player.style.top = `${playerPos.y}px`
   $player.style.left = `${playerPos.x}px`
+
+  // Check if the player has reached the exit
+  const $exit = document.querySelector('.exit').getBoundingClientRect()
+  if (
+    playerRect.left >= $exit.left &&
+    playerRect.right <= $exit.right &&
+    playerRect.top >= $exit.top &&
+    playerRect.bottom <= $exit.bottom
+  ) {
+    alert('Congratulations!')
+    resetGame()
+  }
 })

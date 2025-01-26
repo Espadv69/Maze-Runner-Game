@@ -70,12 +70,13 @@ h1 {
 
 /* Reset button */
 .reset {
-  cursor: pointer;
-
+  
   display: flex;
   justify-content: center;
-
+  
   .reset-btn {
+    cursor: pointer;
+
     padding: 1rem 2rem;
 
     border: 2px solid whitesmoke;

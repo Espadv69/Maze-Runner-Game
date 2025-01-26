@@ -7,3 +7,10 @@ let playerPos = { x: 10, y: 10 }
 
 // Movement step size for the player
 const step = 10
+
+// Listen for keyboard arrow key events
+document.addEventListener('keydown', (event) => {
+  // Get the boundaries of the maze and the player
+  const mazeRect = $maze.getBoundingClientRect()
+  const playerRect = $player.getBoundingClientRect()
+})

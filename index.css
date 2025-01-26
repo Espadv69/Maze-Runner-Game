@@ -70,6 +70,8 @@ h1 {
 
 /* Reset button */
 .reset {
+  cursor: pointer;
+
   display: flex;
   justify-content: center;
 

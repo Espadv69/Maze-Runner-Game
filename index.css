@@ -59,3 +59,19 @@ h1 {
   text-align: center;
   color: currentColor;
 }
+
+/* Reset button */
+.reset {
+  display: flex;
+  justify-content: center;
+
+  .reset-btn {
+    padding: 1rem 2rem;
+
+    border: 2px solid whitesmoke;
+    border-radius: 8px;
+
+    color: currentColor;
+    background: transparent;
+  }
+}

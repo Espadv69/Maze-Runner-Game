@@ -1,6 +1,7 @@
 // DOM elements
 const $player = document.querySelector('.player')
 const $maze = document.querySelector('.maze')
+const $walls = document.querySelectorAll('.wall')
 const $congratulations = document.querySelector('.congratulations')
 const $restart_btn = document.querySelector('.reset-btn')
 
@@ -37,6 +38,13 @@ document.addEventListener('keydown', (event) => {
       // Move right if the player is not at the right edge
       if (playerRect.right < mazeRect.right) playerPos.x += step
       break
+  }
+
+  // Check for wall collision before updating position
+  if (!isCollidingWithWalls(nextPos)) {
+    playerPos = nextPos
+    $player.style.top = `${playerPos.y}px`
+    $player.style.left = `${playerPos.x}px`
   }
 
   // Update the player's position in the maze

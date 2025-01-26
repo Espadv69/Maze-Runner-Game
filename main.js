@@ -36,4 +36,8 @@ document.addEventListener('keydown', (event) => {
       if (playerRect.right < mazeRect.right) playerPos.x += step
       break
   }
+
+  // Update the player's position in the maze
+  $player.style.top = `${playerPos.y}px`
+  $player.style.left = `${playerPos.x}px`
 })

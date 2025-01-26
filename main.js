@@ -13,4 +13,12 @@ document.addEventListener('keydown', (event) => {
   // Get the boundaries of the maze and the player
   const mazeRect = $maze.getBoundingClientRect()
   const playerRect = $player.getBoundingClientRect()
+
+  // Move the player based on the key pressed
+  switch (event.key) {
+    case 'ArrowUp':
+      // Move up if the player is not at the top edge
+      if (playerRect.top > mazeRect.top) playerPos.y -= step
+      break
+  }
 })

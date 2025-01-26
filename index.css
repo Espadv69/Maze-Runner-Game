@@ -57,6 +57,8 @@ h1 {
 /* Congratulations message */
 .congratulations {
   text-align: center;
+  font-size: 25px;
+
   color: currentColor;
 }
 

@@ -2,6 +2,7 @@
 const $player = document.querySelector('.player')
 const $maze = document.querySelector('.maze')
 const $congratulations = document.querySelector('.congratulations')
+const $restart_btn = document.querySelector('.reset-btn')
 
 // Initial position of the player
 let playerPos = { x: 10, y: 10 }
@@ -55,6 +56,8 @@ document.addEventListener('keydown', (event) => {
     $congratulations.appendChild($p_congrats)
   }
 })
+
+$restart_btn.addEventListener('click', resetGame)
 
 // Reset the player's position to the starting point
 function resetGame() {

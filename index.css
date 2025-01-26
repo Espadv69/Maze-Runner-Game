@@ -44,6 +44,12 @@ h1 {
   left: 10px;
 }
 
+/* Wall styling */
+.wall {
+  position: absolute;
+  background-color: #333;
+}
+
 /* Exit area styling */
 .exit {
   position: absolute;

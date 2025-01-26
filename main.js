@@ -73,6 +73,20 @@ function isCollidingWithWalls(nextPos) {
     bottom: nextPos.y + 20,
     right: nextPos.x + 20,
   }
+
+  for (const wall of $walls) {
+    const wallRect = wall.getBoundingClientRect()
+
+    if (
+      testPlayerRect.right > wallRect.left &&
+      testPlayerRect.left < wallRect.right &&
+      testPlayerRect.bottom > wallRect.top &&
+      testPlayerRect.top < wallRect.bottom
+    ) {
+      return true
+    }
+  }
+  return false
 }
 
 $restart_btn.addEventListener('click', resetGame)

@@ -1,6 +1,7 @@
 // DOM elements
 const $player = document.querySelector('.player')
 const $maze = document.querySelector('.maze')
+const $congratulations = document.querySelector('.congratulations')
 
 // Initial position of the player
 let playerPos = { x: 10, y: 10 }
@@ -49,8 +50,9 @@ document.addEventListener('keydown', (event) => {
     playerRect.top >= $exit.top &&
     playerRect.bottom <= $exit.bottom
   ) {
-    alert('Congratulations!')
-    resetGame()
+    const $p_congrats = document.createElement('p')
+    $p_congrats.textContent = 'Congratulations! You reached the exit!'
+    $congratulations.appendChild($p_congrats)
   }
 })
 
@@ -59,4 +61,5 @@ function resetGame() {
   playerPos = { x: 10, y: 10 } // Reset position
   $player.style.top = `${playerPos.y}px`
   $player.style.left = `${playerPos.x}px`
+  $congratulations.textContent = ''
 }

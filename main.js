@@ -1,7 +1,6 @@
 // DOM elements
 const $player = document.querySelector('.player')
 const $maze = document.querySelector('.maze')
-const $walls = document.querySelectorAll('.wall')
 const $congratulations = document.querySelector('.congratulations')
 const $restart_btn = document.querySelector('.reset-btn')
 
@@ -40,13 +39,6 @@ document.addEventListener('keydown', (event) => {
       break
   }
 
-  // Check for wall collision before updating position
-  if (!isCollidingWithWalls(nextPos)) {
-    playerPos = nextPos
-    $player.style.top = `${playerPos.y}px`
-    $player.style.left = `${playerPos.x}px`
-  }
-
   // Update the player's position in the maze
   $player.style.top = `${playerPos.y}px`
   $player.style.left = `${playerPos.x}px`
@@ -64,30 +56,6 @@ document.addEventListener('keydown', (event) => {
     $congratulations.appendChild($p_congrats)
   }
 })
-
-// Check if the player's next position collides with any wall
-function isCollidingWithWalls(nextPos) {
-  const testPlayerRect = {
-    top: nextPos.y,
-    left: nextPos.x,
-    bottom: nextPos.y + 20,
-    right: nextPos.x + 20,
-  }
-
-  for (const wall of $walls) {
-    const wallRect = wall.getBoundingClientRect()
-
-    if (
-      testPlayerRect.right > wallRect.left &&
-      testPlayerRect.left < wallRect.right &&
-      testPlayerRect.bottom > wallRect.top &&
-      testPlayerRect.top < wallRect.bottom
-    ) {
-      return true
-    }
-  }
-  return false
-}
 
 $restart_btn.addEventListener('click', resetGame)
 

@@ -65,6 +65,16 @@ document.addEventListener('keydown', (event) => {
   }
 })
 
+// Check if the player's next position collides with any wall
+function isCollidingWithWalls(nextPos) {
+  const testPlayerRect = {
+    top: nextPos.y,
+    left: nextPos.x,
+    bottom: nextPos.y + 20,
+    right: nextPos.x + 20,
+  }
+}
+
 $restart_btn.addEventListener('click', resetGame)
 
 // Reset the player's position to the starting point

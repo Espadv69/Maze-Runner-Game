@@ -53,3 +53,10 @@ document.addEventListener('keydown', (event) => {
     resetGame()
   }
 })
+
+// Reset the player's position to the starting point
+function resetGame() {
+  playerPos = { x: 10, y: 10 } // Reset position
+  $player.style.top = `${playerPos.y}px`
+  $player.style.left = `${playerPos.x}px`
+}

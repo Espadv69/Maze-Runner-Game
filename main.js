@@ -20,5 +20,10 @@ document.addEventListener('keydown', (event) => {
       // Move up if the player is not at the top edge
       if (playerRect.top > mazeRect.top) playerPos.y -= step
       break
+
+    case 'ArrowDown':
+      // Move down if the player is not at the bottom edge
+      if (playerRect.bottom < mazeRect.bottom) playerPos.y += step
+      break
   }
 })
